@@ -1,3 +1,12 @@
+:root {
+  --primary-color: #3399ff;
+  --primary-color-dark: color-mix(in srgb, var(--primary-color) 85%, black);
+  --primary-color-light: color-mix(in srgb, var(--primary-color) 60%, transparent);
+  --secondary-color: #e53935;
+  --secondary-color-dark: #d32f2f;
+  --secondary-color-light: #ef5350;
+}
+
 @keyframes pulse {
   from {
     opacity: 1;
@@ -67,7 +76,7 @@ body, html {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #4CAF50;
+  background-color: var(--primary-color);
 }
 
 .pulse-bubble-1 {
@@ -109,7 +118,7 @@ h1 {
 #generate {
   padding: 15px 30px;
   font-size: 1.2rem;
-  background-color: #4CAF50;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   border-radius: 6px;
@@ -123,13 +132,13 @@ h1 {
 }
 
 #generate:focus {
- background-color: #45a049;
+ background-color: var(--primary-color-dark);
  animation-play-state: running;
  filter: drop-shadow(2px 2px 8px #00000062);
 }
 
 #generate:hover {
-  background-color: #45a049;
+  background-color: var(--primary-color-light);
 }
 
 
@@ -264,7 +273,7 @@ h1 span:nth-child(7), span:nth-child(14), span:nth-child(21) {
 
 
 button#options-button {
-  background-color: #4CAF50;
+  background-color: var(--primary-color);
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -296,7 +305,7 @@ button#options-button.active .triangle {
 }
 
 button#options-button.active:hover {
-  background-color: #4caf504f;
+  background-color: var(--primary-color-light);
 }
 
 button#options-button:after {
@@ -323,11 +332,11 @@ button#options-button.active:after {
 }
 
 button#options-button:hover {
-  background-color: #45a049;
+  background-color: var(--primary-color-light);
 }
 
 button#options-button:active {
-  background-color: #3e8e41;
+  background-color: var(--primary-color-dark);
   transform: translateY(4px);
 }
 
@@ -363,7 +372,7 @@ button#options-button:active {
 
 button#chatgpt-button {
   display: none;
-  background-color: #4CAF50;
+  background-color: var(--primary-color);
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -389,11 +398,11 @@ button#chatgpt-button:after{
 }
 
 button#chatgpt-button:hover {
-  background-color: #45a049;
+  background-color: var(--primary-color-light);
 }
 
 button#chatgpt-button:active {
-  background-color: #3e8e41;
+  background-color: var(--primary-color-dark);
   transform: translateY(4px);
 
 }
@@ -417,7 +426,7 @@ button#chatgpt-button:active {
 }
 
 .noUi-connect {
-  background: #4caf50ab !important;
+  background: var(--primary-color) !important;
 }
 
 input#manual-word-input {
