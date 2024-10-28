@@ -1,0 +1,426 @@
+@keyframes pulse {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: .25;
+    transform: scale(.75);
+  }
+}
+
+body, html {
+  overflow-x: hidden;
+}
+
+.loading-indicator {
+  width: 100vw;
+  display: flex;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  align-items: center;
+  flex-direction: column;
+  opacity: 1;
+  visibility: visible;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.loading-text {
+  display: flex;
+  flex-direction: row;
+}
+
+.loading-text h1{
+  font-size: 1rem !important;
+
+}
+
+.loading-text h1.wort1 {
+  margin-right: .2rem;
+}
+
+.loading-text .letter {
+  display: inline-block;
+}
+
+.letter:hover {
+  animation: none;
+}
+
+.loading-text h1 span {
+ animation: jump 1s linear infinite;
+}
+
+.loading-text h1.wort2 span {
+  animation-direction: alternate;
+ }
+
+
+.pulse-container {
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pulse-bubble {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #4CAF50;
+}
+
+.pulse-bubble-1 {
+    animation: pulse .4s ease 0s infinite alternate;
+}
+.pulse-bubble-2 {
+    animation: pulse .4s ease .2s infinite alternate;
+}
+.pulse-bubble-3 {
+    animation: pulse .4s ease .4s infinite alternate;
+}
+
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #5a5a5a;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#generate {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  animation: shake 0.5s infinite;
+  animation-play-state: paused;
+  animation-direction: normal;
+  text-transform: uppercase;
+  filter: none;
+}
+
+#generate:focus {
+ background-color: #45a049;
+ animation-play-state: running;
+ filter: drop-shadow(2px 2px 8px #00000062);
+}
+
+#generate:hover {
+  background-color: #45a049;
+}
+
+
+
+
+#result {
+  margin-top: 30px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.word-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  width: 100%;
+}
+
+.word {
+  display: inline-block;
+  animation: shake 0.5s ease-in-out, zoom 0.5s ease-in-out;
+}
+
+
+@keyframes jump {
+	5% {
+		transform: scale(1.2,0.8);
+	}
+	12%, 13% {
+		transform: translateY(-1em) scale(1,1.001);
+	}
+	17% {
+		transform: translateY(0) scale(1,0.999);
+	}
+	22% {
+		transform: translateY(0) scale(1.1,0.9);
+	}
+	23% {
+		transform: translateY(-1px) scale(1.1,1);
+	}
+	25% {
+		transform: translateY(0) scale(1,1);
+	}
+}
+
+
+@keyframes shake {
+  0% { transform: translate(2px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-2deg); }
+  20% { transform: translate(-2px, 0px) rotate(3deg); }
+  30% { transform: translate(0px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-2px, 1px) rotate(0deg); }
+  70% { transform: translate(2px, 1px) rotate(-2deg); }
+  80% { transform: translate(-1px, -1px) rotate(3deg); }
+  90% { transform: translate(2px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes zoom {
+  0% { scale: 1;}
+  50% { scale: 1.2;}
+  100% { scale: 1;}
+}
+
+
+.title {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-width: 200px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.letter {
+  display: inline-block;
+}
+
+.letter {
+  animation: 2s linear 1 jump;
+  animation-fill-mode: forwards;
+}
+
+.letter:hover {
+  animation: none;
+}
+
+
+
+h1 {
+  display: flex;
+}
+
+h1 span {
+  display: table-cell;
+}
+
+
+h1 span:nth-child(1), span:nth-child(8), span:nth-child(15) {
+  animation-delay: .01s;
+}
+
+h1 span:nth-child(2), span:nth-child(9), span:nth-child(16) {
+  animation-delay: .02s;
+}
+
+h1 span:nth-child(3), span:nth-child(10), span:nth-child(17) {
+  animation-delay: .03s;
+}
+
+h1 span:nth-child(4), span:nth-child(11), span:nth-child(18) {
+  animation-delay: .04s;
+}
+
+h1 span:nth-child(5), span:nth-child(12), span:nth-child(19) {
+  animation-delay: .05;
+}
+
+h1 span:nth-child(6), span:nth-child(13), span:nth-child(20) {
+  animation-delay: .06s;
+}
+
+h1 span:nth-child(7), span:nth-child(14), span:nth-child(21) {
+  animation-delay: .07s;
+}
+
+
+
+button#options-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 0;
+  transition: all 0.3s;
+  outline: none;
+  font-weight: bold;
+}
+
+button#options-button.active {
+  background-color: transparent;
+  color: black;
+}
+
+button#options-button.active .triangle {
+  transform: translateX(4.5em) rotate(180deg);
+  border-top: 10px solid black;
+}
+
+.triangle {
+  position: absolute;
+  transform: translateX(4.5em) translateY(0.25em);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+button#options-button.active:hover {
+  background-color: #4caf504f;
+}
+
+button#options-button:after {
+  content: "";
+  display: block;
+  width: 100vw;
+  left: 0;
+  height: 2px;
+  background-color: black;
+  transition: all 1s ease-out;
+  position: absolute;
+  transform: translateY(1em);
+}
+
+button#options-button.active:after {
+  content: '';
+  display: block;
+  width: 100vw;
+  left: 0;
+  height: 2px;
+  background-color: black;
+  transition: all 0.2s ease-in;
+  transform: translateY(29em);
+}
+
+button#options-button:hover {
+  background-color: #45a049;
+}
+
+button#options-button:active {
+  background-color: #3e8e41;
+  transform: translateY(4px);
+}
+
+.options {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-width: 200px;
+}
+
+
+#options-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin-top: 30px;
+  transition: all 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0.4;
+}
+
+#options-container.active {
+  max-height: 320px;
+  opacity: 1;
+}
+
+
+button#chatgpt-button {
+  display: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s;
+  outline: none;
+  margin-top: 2em;
+}
+
+button#chatgpt-button:after{
+  content: "(Sendet das Ergebnis zu ChatGPT und verkauft deine Seele an OpenAI)";
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  font-size: 0.8em;
+  color: #666;
+  /* margin-top: 0.5em; */
+  margin-bottom: 1em;
+}
+
+button#chatgpt-button:hover {
+  background-color: #45a049;
+}
+
+button#chatgpt-button:active {
+  background-color: #3e8e41;
+  transform: translateY(4px);
+
+}
+
+.slider-wrapper {
+  margin-bottom: 2em;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+}
+
+.noUi-target {
+  background: #FAFAFA;
+  border-radius: 4px;
+  border: 1px solid #D3D3D3;
+  box-shadow: inset 0 1px 1px #F0F0F0, 0 3px 6px -5px #BBB;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.noUi-connect {
+  background: #4caf50ab !important;
+}
+
+input#manual-word-input {
+  margin-top: .5em;
+  margin-bottom: 2em;
+}
