@@ -1,10 +1,8 @@
 :root {
-  --primary-color: #3399ff;
+  --primary-color: #4CAF50;
   --primary-color-dark: color-mix(in srgb, var(--primary-color) 85%, black);
   --primary-color-light: color-mix(in srgb, var(--primary-color) 60%, transparent);
-  --secondary-color: #e53935;
-  --secondary-color-dark: #d32f2f;
-  --secondary-color-light: #ef5350;
+  --secondary-color: #ff8933;
 }
 
 @keyframes pulse {
@@ -138,7 +136,7 @@ h1 {
 }
 
 #generate:hover {
-  background-color: var(--primary-color-light);
+  background-color: var(--primary-color-dark);
 }
 
 
@@ -305,7 +303,7 @@ button#options-button.active .triangle {
 }
 
 button#options-button.active:hover {
-  background-color: var(--primary-color-light);
+  background-color: var(--primary-color-dark);
 }
 
 button#options-button:after {
@@ -332,11 +330,11 @@ button#options-button.active:after {
 }
 
 button#options-button:hover {
-  background-color: var(--primary-color-light);
+  background-color: var(--primary-color-dark);
 }
 
 button#options-button:active {
-  background-color: var(--primary-color-dark);
+  background-color: var(--primary-color-light);
   transform: translateY(4px);
 }
 
@@ -398,7 +396,7 @@ button#chatgpt-button:after{
 }
 
 button#chatgpt-button:hover {
-  background-color: var(--primary-color-light);
+  background-color: var(--primary-color-dark);
 }
 
 button#chatgpt-button:active {
